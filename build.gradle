@@ -1,26 +1,64 @@
+import com.vanniktech.maven.publish.SonatypeHost
+import com.vanniktech.maven.publish.JavaLibrary
+import com.vanniktech.maven.publish.JavadocJar
+
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.2.5'
-	id 'io.spring.dependency-management' version '1.1.4'
+    id 'java'
+    id "com.vanniktech.maven.publish" version "0.28.0"
+    id 'signing'
 }
 
 group = 'IDMaker'
-version = '0.0.1-SNAPSHOT'
-
-java {
-	sourceCompatibility = '17'
-}
+version = '0.0.1'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
+signing {
+    useGpgCmd()
+    sign publishing.publications
+}
+
+mavenPublishing {
+    configure(new JavaLibrary(new JavadocJar.Empty(), true))
+
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+//    signAllPublications()
+
+    coordinates("io.github.yonggoose", "IDMaker", "0.0.1")
+
+    pom {
+        name = "IDMaker"
+        description = "library for ID Making"
+        inceptionYear = "2024"
+        url = "https://github.com/IDMaker-io/IDMaker"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "https://github.com/IDMaker-io/IDMaker/blob/main/LICENSE"
+            }
+        }
+        developers {
+            developer {
+                id = "YongGoose"
+                name = "Yongjun Hong"
+                url = "https://github.com/YongGoose"
+            }
+        }
+
+        scm {
+            connection = "scm:git:git://github.com/IDMaker-io/IDMaker.git"
+            developerConnection = "scm:git:ssh://github.com:IDMaker-io/IDMaker.git"
+            url = "https://github.com/IDMaker-io/IDMaker/tree/main"
+        }
+    }
+}
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '3.0.0'
+
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
 }
