@@ -26,7 +26,7 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 //    signAllPublications()
 
-    coordinates("io.github.yonggoose", "IDMaker", "0.0.1")
+    coordinates("io.github.yonggoose", "IDMaker", "0.1.0")
 
     pom {
         name = "IDMaker"
