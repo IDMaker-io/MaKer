@@ -20,13 +20,13 @@ public class IDMakerUtil {
 
 	private IDMakerUtil() {}
 
-	public static void generateIDs(Object object) throws IllegalAccessException,
-		IntrospectionException, InvocationTargetException {
+	public static void generateIDs(Object object) throws IllegalAccessException {
 		Class<?> clazz = object.getClass();
-		for (PropertyDescriptor pd : Introspector.getBeanInfo(clazz, Object.class).getPropertyDescriptors()) {
-			if (pd.getReadMethod().isAnnotationPresent(IDMaker.class) && pd.getPropertyType().equals(String.class)) {
-				IDMaker idMaker = pd.getReadMethod().getAnnotation(IDMaker.class);
-				pd.getWriteMethod().invoke(object, generateID(adjustNumber(idMaker.length())));
+		for (Field field : clazz.getDeclaredFields()) {
+			if (field.isAnnotationPresent(IDMaker.class) && field.getType().equals(String.class)) {
+				IDMaker idMaker = field.getAnnotation(IDMaker.class);
+				field.setAccessible(true);
+				field.set(object, generateID(adjustNumber(idMaker.length())));
 			}
 		}
 	}
@@ -35,8 +35,8 @@ public class IDMakerUtil {
 		return Math.min(length, 15);
 	}
 
-	private static String generateID(int length) {
+	public static String generateID(int length) {
 		return LocalDateTime.now().format(formatter)
-			+ RandomStringUtils.random(length);
+			+ RandomValueUtil.createRandomString(length);
 	}
 }
