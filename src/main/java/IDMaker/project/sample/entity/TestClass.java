@@ -1,12 +1,13 @@
 package IDMaker.project.sample.entity;
 
 import IDMaker.project.annotation.IDMaker;
+import IDMaker.project.listener.IDMakerEntityListener;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
 
 @Entity
+@EntityListeners(IDMakerEntityListener.class)
 public class TestClass {
 
 	@Id

@@ -12,7 +12,7 @@ public class TestClassService {
 	@Autowired
 	private TestClassRepository testClassRepository;
 
-	public TestClass save() {
+	public TestClass testClasssave() {
 		TestClass testClass = new TestClass();
 		return testClassRepository.save(testClass);
 	}

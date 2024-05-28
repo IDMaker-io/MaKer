@@ -22,14 +22,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class IDMakerTest {
 
-
 	@Autowired
 	private TestClassService testClassService;
 
-
 	@Test
 	void testGenerateIDs() {
-		TestClass testObject = testClassService.save();
+		TestClass testObject = testClassService.testClasssave();
 		assertTrue(StringUtils.isAlphanumeric(testObject.getIdField()));
 		assertEquals(27, testObject.getIdField().length());
 	}
@@ -59,7 +57,7 @@ class IDMakerTest {
 		List<TestClass> testObjects = IntStream.range(0, 1000)
 			.mapToObj(i -> {
 				try {
-					TestClass testObject = testClassService.save();
+					TestClass testObject = testClassService.testClasssave();
 					Thread.sleep(10);
 					return testObject;
 				} catch (InterruptedException e) {

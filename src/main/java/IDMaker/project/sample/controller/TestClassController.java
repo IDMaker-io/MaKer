@@ -15,7 +15,7 @@ public class TestClassController {
 
 	@GetMapping("/test")
 	public ResponseEntity<String> registTestClass() {
-		TestClass testClass = testClassService.save();
+		TestClass testClass = testClassService.testClasssave();
 		return ResponseEntity.ok(testClass.getIdField());
 	}
 }
