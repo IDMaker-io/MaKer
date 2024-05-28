@@ -1,12 +1,12 @@
-package IDMaker.project.sample.controller;
+package IDMaker.project.fixture.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import IDMaker.project.sample.entity.TestClass;
-import IDMaker.project.sample.service.TestClassService;
+import IDMaker.project.fixture.entity.TestClass;
+import IDMaker.project.fixture.service.TestClassService;
 
 @RestController
 public class TestClassController {

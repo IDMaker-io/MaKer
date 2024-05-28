@@ -1,10 +1,10 @@
-package IDMaker.project.sample.service;
+package IDMaker.project.fixture.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import IDMaker.project.sample.entity.TestClass;
-import IDMaker.project.sample.repository.TestClassRepository;
+import IDMaker.project.fixture.entity.TestClass;
+import IDMaker.project.fixture.repository.TestClassRepository;
 
 @Service
 public class TestClassService {

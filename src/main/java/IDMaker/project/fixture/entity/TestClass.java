@@ -1,5 +1,6 @@
-package IDMaker.project.sample.entity;
+package IDMaker.project.fixture.entity;
 
+import IDMaker.project.annotation.GenerationType;
 import IDMaker.project.annotation.IDMaker;
 import IDMaker.project.listener.IDMakerEntityListener;
 import jakarta.persistence.Entity;
@@ -11,7 +12,7 @@ import jakarta.persistence.Id;
 public class TestClass {
 
 	@Id
-	@IDMaker(length = 10)
+	@IDMaker(length = 10, type = GenerationType.EN)
 	private String id;
 
 	@IDMaker
