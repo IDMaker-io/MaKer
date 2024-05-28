@@ -11,7 +11,7 @@ plugins {
 }
 
 group = 'IDMaker'
-version = '0.2.2'
+version = '0.3.0'
 
 repositories {
     mavenCentral()
@@ -27,7 +27,7 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "IDMaker", "0.2.2")
+    coordinates("io.github.yonggoose", "IDMaker", "0.3.0")
 
     pom {
         name = "IDMaker"
