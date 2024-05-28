@@ -2,14 +2,11 @@ package IDMaker.project.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import IDMaker.project.annotation.GenerationType;
 
 /**
- * Utility class for generating IDs.
- * The ID consists of a timestamp and a random string.
- * The timestamp is in the format "yyyyMMddHHmmssSSS".
- * The length of the random string is specified when calling the method.
+ * Utility class for creating timestamped random IDs.
  */
-
 public class IDMakerUtils {
 	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
 
@@ -17,12 +14,31 @@ public class IDMakerUtils {
 	}
 
 	/**
-	 * Generates an ID consisting of a timestamp and a random string.
-	 * @param length the length of the random string
-	 * @return the generated ID
+	 * Creates a timestamped random ID.
+	 *
+	 * @param length the length of the random part of the ID
+	 * @param generationType the type of characters to use for the random part of the ID
+	 * @return a timestamped random ID
+	 * @throws IllegalArgumentException if an invalid GenerationType is provided
 	 */
-	public static String createTimestampedRandomID(int length) {
-		return LocalDateTime.now().format(formatter)
-			+ RandomValueUtil.createRandomString(length);
+	public static String createTimestampedRandomID(int length, GenerationType generationType) {
+		String randomString;
+		switch (generationType) {
+			case KO:
+				randomString = RandomValueUtil.createRandomKoreanString(length);
+				break;
+			case EN:
+				randomString = RandomValueUtil.createRandomEnglishString(length);
+				break;
+			case NUMBER:
+				randomString = RandomValueUtil.createRandomNumberString(length);
+				break;
+			case MIX:
+				randomString = RandomValueUtil.createRandomMixedString(length);
+				break;
+			default:
+				throw new IllegalArgumentException("Invalid GenerationType: " + generationType);
+		}
+		return LocalDateTime.now().format(formatter) + randomString;
 	}
 }
