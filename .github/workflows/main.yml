@@ -2,10 +2,15 @@ name: Build and Test
 
 on:
   push:
-    branches: [ "main" ]
-
+    branches: [ 'main' ]
     paths:
-      - '**.java'
+      - '**'
+
+  pull_request:
+    branches:
+      - '**'
+    paths:
+      - '**'
 
 jobs:
   build:
