@@ -1,7 +1,5 @@
-package IDMaker.project.listener;
+package IDMaker.project;
 
-import IDMaker.project.annotation.IDMaker;
-import IDMaker.project.util.IDMakerUtils;
 import jakarta.persistence.PrePersist;
 
 import org.springframework.stereotype.Component;
@@ -10,8 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.lang.reflect.Field;
 
 /**
- * Listener for entities that need to generate an ID before persisting.
  * This listener checks for fields annotated with {@link IDMaker} and generates an ID for them if they are null.
+ * @author yongjunhong
+ * @since  2024. 5. 31.
  */
 @Component
 public class IDMakerEntityListener {
