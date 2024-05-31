@@ -148,6 +148,3 @@ If you have any questions or issues, please open an issue on the [GitHub reposit
 ## Acknowledgements
 
 - Yongjun Hong, the author of IDMaker.
-```
-
-The `<details>` and `<summary>` tags are used to create a collapsible content block in Markdown. The `<summary>` tag contains the title of the toggle, and the `<details>` tag contains the content that will be hidden until the toggle is clicked.
