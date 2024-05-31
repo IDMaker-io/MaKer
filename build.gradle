@@ -22,6 +22,11 @@ signing {
     sign publishing.publications
 }
 
+javadoc {
+    exclude '**/fixture/**'
+    exclude '**/test/**'
+}
+
 mavenPublishing {
     configure(new JavaLibrary(new JavadocJar.Empty(), true))
 
