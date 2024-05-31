@@ -1,4 +1,4 @@
-package IDMaker.project.annotation;
+package IDMaker.project;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,7 +7,8 @@ import java.lang.annotation.Target;
 
 /**
  * Annotation for fields that should have an ID generated before persisting.
- * The ID is generated using the specified length and type.
+ * @author yongjunhong
+ * @since  2024. 5. 31.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

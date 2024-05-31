@@ -1,11 +1,12 @@
-package IDMaker.project.util;
+package IDMaker.project;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import IDMaker.project.annotation.GenerationType;
 
 /**
  * Utility class for creating timestamped random IDs.
+ * @author yongjunhong
+ * @since  2024. 5. 31.
  */
 public class IDMakerUtils {
 	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");

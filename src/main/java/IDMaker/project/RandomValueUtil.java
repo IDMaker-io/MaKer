@@ -1,9 +1,11 @@
-package IDMaker.project.util;
+package IDMaker.project;
 
 import java.util.Random;
 
 /**
  * Utility class for creating random strings.
+ * @author yongjunhong
+ * @since  2024. 5. 31.
  */
 public class RandomValueUtil {
 	private static final String KOREAN_CHARACTERS = "가나다라마바사아자차카타파하";
