@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations">@Component
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">IDMakerEntityListener</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">This listener checks for fields annotated with <a href="IDMaker.html" title="annotation interface in IDMaker.project"><code>IDMaker</code></a> and generates an ID for them if they are null.</div>
+<div class="block">A listener that checks for fields annotated with <a href="IDMaker.html" title="annotation interface in IDMaker.project"><code>IDMaker</code></a> and generates an ID for them if they are null.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>2024. 5. 31.</dd>
@@ -156,7 +156,7 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>entity</code> - the entity that is about to be persisted</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></code> - if there is an error accessing the fields of the entity</dd>
+<dd><code>IDMaker.project.IDMakerEntityListener.IDMakerAccessException</code> - if there is an error accessing the fields of the entity</dd>
 </dl>
 </section>
 </li>
