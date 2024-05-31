@@ -25,6 +25,7 @@ signing {
 javadoc {
     exclude '**/fixture/**'
     exclude '**/test/**'
+    exclude '**/IDMakerProject.java/**'
 }
 
 mavenPublishing {
