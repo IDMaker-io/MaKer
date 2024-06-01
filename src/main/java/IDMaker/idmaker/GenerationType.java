@@ -1,7 +1,7 @@
-package IDMaker.project;
+package IDMaker.idmaker;
 
 /**
- *
+ * The enum Generation type.
  * @author yongjunhong
  * @since  2024. 5. 31.
  */

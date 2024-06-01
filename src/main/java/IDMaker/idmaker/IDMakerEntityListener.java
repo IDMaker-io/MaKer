@@ -1,4 +1,7 @@
-package IDMaker.project;
+package IDMaker.idmaker;
+
+
+import static IDMaker.idmaker.ExceptionCode.*;
 
 import jakarta.persistence.PrePersist;
 
@@ -39,7 +42,7 @@ public class IDMakerEntityListener {
 	 *
 	 * @param field the field to check
 	 * @return true if the field is annotated with {@link IDMaker} and is of type String, false otherwise
-	 * @throws IllegalArgumentException if the field is annotated with {@link IDMaker} but is not of type String
+	 * @throws IDMakerInvalidArgumentException if the field is annotated with {@link IDMaker} but is not of type String
 	 */
 	private boolean isIDMakerAnnotated(Field field) {
 		if (!field.isAnnotationPresent(IDMaker.class)) {
@@ -47,7 +50,7 @@ public class IDMakerEntityListener {
 		}
 
 		if (field.getType() != String.class) {
-			throw new IllegalArgumentException("IDMaker annotation is only allowed on fields of type String");
+			throw new IDMakerInvalidArgumentException(IDMAKER_ANNOTATION_ON_NON_STRING.getMessage());
 		}
 
 		return true;
@@ -60,7 +63,7 @@ public class IDMakerEntityListener {
 	 * @param field the field for which to generate an ID
 	 * @throws IDMakerAccessException if there is an error accessing the field
 	 */
-	private void generateIdForField(Object entity, Field field) {
+	private void generateIdForField(Object entity, Field field) throws IDMakerAccessException {
 		field.setAccessible(true);
 
 		try {
@@ -70,16 +73,7 @@ public class IDMakerEntityListener {
 				field.set(entity, generatedId);
 			}
 		} catch (IllegalAccessException e) {
-			throw new IDMakerAccessException("Failed to access field with IDMaker annotation", e);
-		}
-	}
-
-	/**
-	 * A custom RuntimeException that is thrown when there is an error accessing a field.
-	 */
-	private static class IDMakerAccessException extends RuntimeException {
-		IDMakerAccessException(String message, Throwable cause) {
-			super(message, cause);
+			throw new IDMakerAccessException(FAILED_TO_ACCESS_FIELD.getMessage(), e);
 		}
 	}
 }

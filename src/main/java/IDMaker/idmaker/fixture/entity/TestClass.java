@@ -1,8 +1,8 @@
-package IDMaker.project.fixture.entity;
+package IDMaker.idmaker.fixture.entity;
 
-import IDMaker.project.GenerationType;
-import IDMaker.project.IDMaker;
-import IDMaker.project.IDMakerEntityListener;
+import IDMaker.idmaker.GenerationType;
+import IDMaker.idmaker.IDMaker;
+import IDMaker.idmaker.IDMakerEntityListener;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
