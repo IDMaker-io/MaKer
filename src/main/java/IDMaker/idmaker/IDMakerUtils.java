@@ -1,4 +1,4 @@
-package IDMaker.project;
+package IDMaker.idmaker;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

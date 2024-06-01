@@ -1,4 +1,4 @@
-package IDMaker.project;
+package IDMaker.idmaker;
 
 import jakarta.persistence.PrePersist;
 
