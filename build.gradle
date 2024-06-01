@@ -11,7 +11,7 @@ plugins {
 }
 
 group = 'IDMaker'
-version = '0.3.0'
+version = '0.3.1'
 
 repositories {
     mavenCentral()
@@ -33,7 +33,7 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "IDMaker", "0.3.0")
+    coordinates("io.github.yonggoose", "IDMaker", "0.3.1")
 
     pom {
         name = "IDMaker"
@@ -70,6 +70,7 @@ dependencies {
 
     //jpa
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.projectlombok:lombok'
 
     //test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -79,5 +80,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-aop'
 }
 
-tasks.named('test') {
+
+test {
+    useJUnitPlatform()
+    include '**/idmaker/**'
 }
