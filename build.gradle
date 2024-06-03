@@ -78,6 +78,10 @@ dependencies {
 
     // Spring AOP
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto
+    implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '6.3.0'
+
 }
 
 
