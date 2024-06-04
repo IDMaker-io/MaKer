@@ -1,14 +1,13 @@
 package IDMaker.passwordmaker;
 
-import static IDMaker.idmaker.ExceptionCode.*;
+import static IDMaker.passwordmaker.ExceptionCode.*;
+import static IDMaker.passwordmaker.ExceptionCode.FAILED_TO_ACCESS_FIELD;
 
 import java.lang.reflect.Field;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import IDMaker.idmaker.IDMakerAccessException;
-import IDMaker.idmaker.IDMakerInvalidArgumentException;
 import jakarta.persistence.PrePersist;
 
 /**
@@ -44,7 +43,7 @@ public class PasswordMakerListener {
 	 *
 	 * @param field the field to check
 	 * @return true if the field is annotated with PasswordMaker and is of type String, false otherwise
-	 * @throws IDMakerInvalidArgumentException if the field is annotated with PasswordMaker but is not of type String
+	 * @throws PasswordMakerInvalidArgumentsException if the field is annotated with PasswordMaker but is not of type String
 	 */
 	private boolean isPasswordEncoderAnnotated(Field field) {
 		if (!field.isAnnotationPresent(PasswordMaker.class)) {
@@ -52,7 +51,7 @@ public class PasswordMakerListener {
 		}
 
 		if (field.getType() != String.class) {
-			throw new IDMakerInvalidArgumentException(IDMAKER_ANNOTATION_ON_NON_STRING.getMessage());
+			throw new PasswordMakerInvalidArgumentsException(PASSWORD_MAKER_ANNOTATION_ON_NON_STRING.getMessage());
 		}
 
 		return true;
@@ -64,21 +63,21 @@ public class PasswordMakerListener {
 	 *
 	 * @param entity the entity that contains the field
 	 * @param field the field to encode
-	 * @throws RuntimeException if there is an error accessing the field
+	 * @throws PasswordMakerAccessException if there is an error accessing the field
 	 */
-	private void EncodingField(Object entity, Field field) throws IDMakerAccessException {
+	private void EncodingField(Object entity, Field field) throws PasswordMakerInvalidArgumentsException {
 		field.setAccessible(true);
 
 		try {
 			String originalPassword = (String)field.get(entity);
 			if (originalPassword != null && !originalPassword.isEmpty()) {
 				PasswordMaker passwordMaker = field.getAnnotation(PasswordMaker.class);
-				String encodedPassword = PasswordMakerUtil.encodingPassword(originalPassword, passwordMaker.encodingType());
+				String encodedPassword = PasswordMakerUtil.encodingPassword(originalPassword,
+					passwordMaker.encodingType());
 				field.set(entity, encodedPassword);
 			}
 		} catch (IllegalAccessException e) {
-			// todo : exception 정의하기
-			throw new RuntimeException();
+			throw new PasswordMakerAccessException(FAILED_TO_ACCESS_FIELD.getMessage());
 		}
 	}
 }
