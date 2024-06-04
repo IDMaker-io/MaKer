@@ -12,8 +12,8 @@ import java.util.stream.IntStream;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
-import IDMaker.idmaker.fixture.entity.TestClass;
-import IDMaker.idmaker.fixture.service.TestClassService;
+import IDMaker.fixture.entity.TestClass;
+import IDMaker.fixture.service.TestClassService;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
