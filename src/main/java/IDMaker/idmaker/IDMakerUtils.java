@@ -1,5 +1,7 @@
 package IDMaker.idmaker;
 
+import static IDMaker.idmaker.ExceptionCode.*;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -23,23 +25,13 @@ public class IDMakerUtils {
 	 * @throws IllegalArgumentException if an invalid GenerationType is provided
 	 */
 	public static String createTimestampedRandomID(int length, GenerationType generationType) {
-		String randomString;
-		switch (generationType) {
-			case KO:
-				randomString = RandomValueUtil.createRandomKoreanString(length);
-				break;
-			case EN:
-				randomString = RandomValueUtil.createRandomEnglishString(length);
-				break;
-			case NUMBER:
-				randomString = RandomValueUtil.createRandomNumberString(length);
-				break;
-			case MIX:
-				randomString = RandomValueUtil.createRandomMixedString(length);
-				break;
-			default:
-				throw new IllegalArgumentException("Invalid GenerationType: " + generationType);
-		}
+		String randomString = switch (generationType) {
+			case KO -> RandomValueUtil.createRandomKoreanString(length);
+			case EN -> RandomValueUtil.createRandomEnglishString(length);
+			case NUMBER -> RandomValueUtil.createRandomNumberString(length);
+			case MIX -> RandomValueUtil.createRandomMixedString(length);
+			default -> throw new IDMakerInvalidArgumentException(IDMAKER_ANNOTATION_TYPE_INVALID.getMessage());
+		};
 		return LocalDateTime.now().format(formatter) + randomString;
 	}
 }

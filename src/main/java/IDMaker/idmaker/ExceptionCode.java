@@ -14,8 +14,11 @@ public enum ExceptionCode {
 	/**
 	 * The Idmaker annotation on non string.
 	 */
-	IDMAKER_ANNOTATION_ON_NON_STRING("IDMaker annotation is only allowed on fields of type String.");
-
+	IDMAKER_ANNOTATION_ON_NON_STRING("IDMaker annotation is only allowed on fields of type String."),
+	/**
+	 * The IDMaker annotation's type is invalid.
+	 */
+	IDMAKER_ANNOTATION_TYPE_INVALID("The type of the IDMaker annotation is invalid.");
 	private final String message;
 
 	ExceptionCode(String message) {
