@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"IDMaker.idmaker"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"IDMaker.idmaker"},{"l":"IDMaker.passwordmaker"}];updateSearchResults();
