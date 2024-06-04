@@ -1,4 +1,4 @@
-package IDMaker.idmaker;
+package IDMaker.passwordmaker;
 
 /**
  * The enum Exception code.
@@ -10,15 +10,12 @@ public enum ExceptionCode {
 	/**
 	 * The Failed to access field.
 	 */
-	FAILED_TO_ACCESS_FIELD("Failed to access field with IDMaker annotation."),
+	FAILED_TO_ACCESS_FIELD("Failed to access field with PasswordMaker annotation."),
 	/**
 	 * The Idmaker annotation on non string.
 	 */
-	IDMAKER_ANNOTATION_ON_NON_STRING("IDMaker annotation is only allowed on fields of type String."),
-	/**
-	 * The IDMaker annotation's type is invalid.
-	 */
-	IDMAKER_ANNOTATION_TYPE_INVALID("The type of the IDMaker annotation is invalid.");
+	PASSWORD_MAKER_ANNOTATION_ON_NON_STRING("PasswordMaker annotation is only allowed on fields of type String.");
+
 	private final String message;
 
 	ExceptionCode(String message) {
