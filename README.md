@@ -1,3 +1,4 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FIDMaker-io%2FIDMaker&count_bg=%233D7EC8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=IDMaker&edge_flat=false)](https://hits.seeyoufarm.com)
 # IDMaker
 
 IDMaker is a Java library that provides a simple way to generate unique IDs for your entities. It is designed to be easy to use and flexible, allowing you to customize the generation of IDs to suit your needs.
