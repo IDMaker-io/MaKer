@@ -1,5 +1,5 @@
 /**
- * Provides the classes and annotations for password encoding & decoding.
+ * Provides the classes and annotations for password encoding and decoding.
  * This package includes classes for creating password encoders, handling password encoding listeners, and managing password encoding annotations.
  *
  * @author yongjunhong
