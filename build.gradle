@@ -11,7 +11,7 @@ plugins {
 }
 
 group = 'IDMaker'
-version = '0.4.0'
+version = '0.5.0'
 
 repositories {
     mavenCentral()
@@ -33,17 +33,17 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "IDMaker", "0.4.0")
+    coordinates("io.github.yonggoose", "MaKer", "0.5.0")
 
     pom {
         name = "IDMaker"
         description = "library for ID Making"
         inceptionYear = "2024"
-        url = "https://github.com/IDMaker-io/IDMaker"
+        url = "https://github.com/IDMaker-io/MaKer"
         licenses {
             license {
                 name = "The Apache License, Version 2.0"
-                url = "https://github.com/IDMaker-io/IDMaker/blob/main/LICENSE"
+                url = "https://github.com/IDMaker-io/MaKer/blob/main/LICENSE"
             }
         }
         developers {
@@ -55,9 +55,9 @@ mavenPublishing {
         }
 
         scm {
-            connection = "scm:git:git://github.com/IDMaker-io/IDMaker.git"
-            developerConnection = "scm:git:ssh://github.com:IDMaker-io/IDMaker.git"
-            url = "https://github.com/IDMaker-io/IDMaker/tree/main"
+            connection = "scm:git:git://github.com/IDMaker-io/MaKer.git"
+            developerConnection = "scm:git:ssh://github.com:IDMaker-io/MaKer.git"
+            url = "https://github.com/IDMaker-io/MaKer/tree/main"
         }
     }
 }
