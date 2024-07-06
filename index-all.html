@@ -63,6 +63,18 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Bcrypt encoding id.</div>
 </dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#between(java.time.LocalDateTime,java.time.LocalDateTime)" class="member-name-link">between(LocalDateTime, LocalDateTime)</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Sets the range of <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a> values to generate.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#build()" class="member-name-link">build()</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Constructs an <a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html" title="class in IDMaker.eventDateTimeMaker"><code>EventDateTimeArbitrary</code></a> based on the configured settings.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html#builder()" class="member-name-link">builder()</a> - Static method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitrary</a></dt>
+<dd>
+<div class="block">Creates a builder for <code>EventDateTimeArbitrary</code>.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
@@ -125,6 +137,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Specifies the encoding type for a password.</div>
 </dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html" class="type-name-link" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitrary</a> - Class in <a href="IDMaker/eventDateTimeMaker/package-summary.html">IDMaker.eventDateTimeMaker</a></dt>
+<dd>
+<div class="block">Provides arbitrary <code>EventDateTime</code> instances based on <code>LocalDateTimeArbitrary</code>.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html#%3Cinit%3E(net.jqwik.time.api.arbitraries.LocalDateTimeArbitrary)" class="member-name-link">EventDateTimeArbitrary(LocalDateTimeArbitrary)</a> - Constructor for class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitrary</a></dt>
+<dd>
+<div class="block">Constructs an <code>EventDateTimeArbitrary</code> instance.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" class="type-name-link" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a> - Class in <a href="IDMaker/eventDateTimeMaker/package-summary.html">IDMaker.eventDateTimeMaker</a></dt>
+<dd>
+<div class="block">Builder class for configuring <a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html" title="class in IDMaker.eventDateTimeMaker"><code>EventDateTimeArbitrary</code></a>.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#%3Cinit%3E()" class="member-name-link">EventDateTimeArbitraryBuilder()</a> - Constructor for class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Constructs an <code>EventDateTimeArbitraryBuilder</code> with default settings.</div>
+</dd>
 <dt><a href="IDMaker/idmaker/ExceptionCode.html" class="type-name-link" title="enum class in IDMaker.idmaker">ExceptionCode</a> - Enum Class in <a href="IDMaker/idmaker/package-summary.html">IDMaker.idmaker</a></dt>
 <dd>
 <div class="block">The enum Exception code.</div>
@@ -155,6 +183,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Gets encoding id.</div>
 </dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html#getEventDateTime()" class="member-name-link">getEventDateTime()</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitrary.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitrary</a></dt>
+<dd>
+<div class="block">Generates a random <code>EventDateTime</code> using the configured <code>LocalDateTimeArbitrary</code>.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/TimeUtil.html#getEventDateTimeFromLocalDateTime(java.time.LocalDateTime)" class="member-name-link">getEventDateTimeFromLocalDateTime(LocalDateTime)</a> - Static method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/TimeUtil.html" title="class in IDMaker.eventDateTimeMaker">TimeUtil</a></dt>
+<dd>
+<div class="block">Converts a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a> to <code>EventDateTime</code>.</div>
+</dd>
 <dt><a href="IDMaker/idmaker/ExceptionCode.html#getMessage()" class="member-name-link">getMessage()</a> - Method in enum class IDMaker.idmaker.<a href="IDMaker/idmaker/ExceptionCode.html" title="enum class in IDMaker.idmaker">ExceptionCode</a></dt>
 <dd>
 <div class="block">Gets message.</div>
@@ -178,6 +214,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The IDMaker annotation's type is invalid.</div>
 </dd>
+<dt><a href="IDMaker/eventDateTimeMaker/package-summary.html">IDMaker.eventDateTimeMaker</a> - package IDMaker.eventDateTimeMaker</dt>
+<dd>&nbsp;</dd>
 <dt><a href="IDMaker/idmaker/package-summary.html">IDMaker.idmaker</a> - package IDMaker.idmaker</dt>
 <dd>
 <div class="block">Provides the classes and annotations for create ID Maker.</div>
@@ -351,9 +389,33 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Scrypt encoding id.</div>
 </dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#setDay(int)" class="member-name-link">setDay(int)</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Sets the day of month for generated <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a>.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#setHour(int)" class="member-name-link">setHour(int)</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Sets the hour of day for generated <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a>.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#setMinute(int)" class="member-name-link">setMinute(int)</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Sets the minute of hour for generated <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a>.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#setMonth(int)" class="member-name-link">setMonth(int)</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Sets the month for generated <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a>.</div>
+</dd>
+<dt><a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html#setYear(int)" class="member-name-link">setYear(int)</a> - Method in class IDMaker.eventDateTimeMaker.<a href="IDMaker/eventDateTimeMaker/EventDateTimeArbitraryBuilder.html" title="class in IDMaker.eventDateTimeMaker">EventDateTimeArbitraryBuilder</a></dt>
+<dd>
+<div class="block">Sets the year for generated <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a>.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
+<dt><a href="IDMaker/eventDateTimeMaker/TimeUtil.html" class="type-name-link" title="class in IDMaker.eventDateTimeMaker">TimeUtil</a> - Class in <a href="IDMaker/eventDateTimeMaker/package-summary.html">IDMaker.eventDateTimeMaker</a></dt>
+<dd>
+<div class="block">Utility class for converting <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html" title="class or interface in java.time" class="external-link"><code>LocalDateTime</code></a> to <code>EventDateTime</code>.</div>
+</dd>
 <dt><a href="IDMaker/idmaker/IDMaker.html#type()" class="member-name-link">type()</a> - Element in annotation interface IDMaker.idmaker.<a href="IDMaker/idmaker/IDMaker.html" title="annotation interface in IDMaker.idmaker">IDMaker</a></dt>
 <dd>
 <div class="block">The type of characters to use for the random part of the ID.</div>
