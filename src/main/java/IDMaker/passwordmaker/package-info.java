@@ -1,5 +1,5 @@
 /**
- * Provides the classes and annotations for password encoding in the ID Maker application.
+ * Provides the classes and annotations for password encoding & decoding.
  * This package includes classes for creating password encoders, handling password encoding listeners, and managing password encoding annotations.
  *
  * @author yongjunhong
