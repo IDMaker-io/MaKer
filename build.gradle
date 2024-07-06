@@ -33,7 +33,7 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "MaKer", "0.5.0")
+    coordinates("io.github.yonggoose", "MaKer", "0.6.0")
 
     pom {
         name = "IDMaker"
@@ -80,6 +80,13 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on
     implementation group: 'org.bouncycastle', name: 'bcprov-jdk18on', version: '1.78'
+
+    // https://mvnrepository.com/artifact/com.google.apis/google-api-services-calendar
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev20240517-2.0.0'
+
+    // https://mvnrepository.com/artifact/net.jqwik/jqwik
+    implementation 'net.jqwik:jqwik:1.8.5'
+
 }
 
 
