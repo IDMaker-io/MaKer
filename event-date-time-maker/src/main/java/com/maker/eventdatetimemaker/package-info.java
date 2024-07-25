@@ -4,4 +4,4 @@
  * @author yongjunhong
  * @since  2024. 7. 7.
  */
-package IDMaker.eventDateTimeMaker;
+package com.maker.eventdatetimemaker;

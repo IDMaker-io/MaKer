@@ -1,6 +1,7 @@
-package IDMaker.eventDateTimeMaker;
+package com.maker.eventdatetimemaker;
 
 import java.time.LocalDateTime;
+
 import net.jqwik.time.api.DateTimes;
 import net.jqwik.time.api.arbitraries.LocalDateTimeArbitrary;
 

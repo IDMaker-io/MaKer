@@ -1,4 +1,4 @@
-package IDMaker.eventDateTimeMaker;
+package com.maker.eventdatetimemaker;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
