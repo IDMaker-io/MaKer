@@ -1,14 +1,14 @@
-package IDMaker.idmaker;
+package com.maker.idmaker;
 
 
-import static IDMaker.idmaker.ExceptionCode.*;
+import static com.maker.idmaker.ExceptionCode.*;
 
-import jakarta.persistence.PrePersist;
+import java.lang.reflect.Field;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.lang.reflect.Field;
+import jakarta.persistence.PrePersist;
 
 /**
  * A listener that checks for fields annotated with {@link IDMaker} and generates an ID for them if they are null.

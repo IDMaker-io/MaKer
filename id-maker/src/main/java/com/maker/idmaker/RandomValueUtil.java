@@ -1,4 +1,4 @@
-package IDMaker.idmaker;
+package com.maker.idmaker;
 
 import java.util.Random;
 

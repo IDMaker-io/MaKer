@@ -1,6 +1,7 @@
-package IDMaker.idmaker;
+package com.maker.idmaker;
 
-import static IDMaker.idmaker.ExceptionCode.*;
+
+import static com.maker.idmaker.ExceptionCode.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

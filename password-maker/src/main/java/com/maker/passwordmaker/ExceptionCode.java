@@ -1,4 +1,4 @@
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;
 
 /**
  * The enum Exception code.

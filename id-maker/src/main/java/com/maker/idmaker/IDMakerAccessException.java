@@ -1,4 +1,4 @@
-package IDMaker.idmaker;
+package com.maker.idmaker;
 
 /**
  * The type Id maker access exception.

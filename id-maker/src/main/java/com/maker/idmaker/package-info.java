@@ -5,4 +5,4 @@
  * @author yongjunhong
  * @since 2024. 6. 4.
  */
-package IDMaker.idmaker;
+package com.maker.idmaker;
