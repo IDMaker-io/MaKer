@@ -1,4 +1,4 @@
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;
 
 /**
  * A sealed class that represents exceptions related to password handling.
@@ -7,7 +7,8 @@ package IDMaker.passwordmaker;
  * @author yongjunhong
  * @since 2024. 6. 4.
  */
-public sealed class PasswordException extends RuntimeException permits PasswordMakerAccessException, PasswordMakerInvalidArgumentsException{
+public sealed class PasswordException extends RuntimeException permits PasswordMakerAccessException,
+	PasswordMakerInvalidArgumentsException {
 
 	/**
 	 * Constructs a new password exception with the specified detail message and cause.

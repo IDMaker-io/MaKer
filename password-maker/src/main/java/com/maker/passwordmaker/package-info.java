@@ -5,4 +5,4 @@
  * @author yongjunhong
  * @since 2024. 6. 4.
  */
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;

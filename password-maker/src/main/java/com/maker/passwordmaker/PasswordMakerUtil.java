@@ -1,4 +1,4 @@
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

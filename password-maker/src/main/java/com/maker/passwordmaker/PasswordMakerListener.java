@@ -1,7 +1,7 @@
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;
 
-import static IDMaker.passwordmaker.ExceptionCode.*;
-import static IDMaker.passwordmaker.ExceptionCode.FAILED_TO_ACCESS_FIELD;
+
+import static com.maker.passwordmaker.ExceptionCode.*;
 
 import java.lang.reflect.Field;
 

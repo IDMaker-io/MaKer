@@ -1,4 +1,4 @@
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

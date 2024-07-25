@@ -1,4 +1,4 @@
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;
 
 /**
  * The type Password maker invalid arguments exception.

@@ -1,4 +1,4 @@
-package IDMaker.passwordmaker;
+package com.maker.passwordmaker;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
