@@ -1,11 +1,13 @@
-package IDMaker.fixture.entity;
+package com.maker.fixture.entity;
 
-import IDMaker.idmaker.GenerationType;
-import IDMaker.idmaker.IDMaker;
-import IDMaker.idmaker.IDMakerEntityListener;
-import IDMaker.passwordmaker.EncodingId;
-import IDMaker.passwordmaker.PasswordMaker;
-import IDMaker.passwordmaker.PasswordMakerListener;
+
+import com.maker.idmaker.GenerationType;
+import com.maker.idmaker.IDMaker;
+import com.maker.idmaker.IDMakerEntityListener;
+import com.maker.passwordmaker.EncodingId;
+import com.maker.passwordmaker.PasswordMaker;
+import com.maker.passwordmaker.PasswordMakerListener;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;

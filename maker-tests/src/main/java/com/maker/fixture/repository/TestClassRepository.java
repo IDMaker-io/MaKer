@@ -1,8 +1,9 @@
-package IDMaker.fixture.repository;
+package com.maker.fixture.repository;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import IDMaker.fixture.entity.TestClass;
+import com.maker.fixture.entity.TestClass;
 
 public interface TestClassRepository extends JpaRepository<TestClass, String> {
 }
