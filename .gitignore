@@ -6,7 +6,6 @@ build/
 !**/src/test/**/build/
 gradle.properties
 gradlew.bat
-settings.gradle
 
 ### STS ###
 .apt_generated

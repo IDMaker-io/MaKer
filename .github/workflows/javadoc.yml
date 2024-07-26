@@ -19,7 +19,7 @@ jobs:
           distribution: 'corretto'
 
       - name: Generate JavaDoc
-        run: ./gradlew javadoc
+        run: ./gradlew aggregateJavadoc
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -10,8 +10,10 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.3'
 }
 
-group = 'IDMaker'
-version = '0.6.0'
+allprojects {
+    group = 'MaKer'
+    version = '0.7.0'
+}
 
 repositories {
     mavenCentral()
@@ -23,9 +25,7 @@ signing {
 }
 
 javadoc {
-    exclude '**/fixture/**'
-    exclude '**/test/**'
-    exclude '**/IDMakerProject.java/**'
+    exclude '**/maker-tests/**'
 }
 
 mavenPublishing {
@@ -33,7 +33,7 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "MaKer", "0.6.0")
+    coordinates("io.github.yonggoose", "MaKer", "0.7.0")
 
     pom {
         name = "IDMaker"
@@ -61,6 +61,7 @@ mavenPublishing {
         }
     }
 }
+
 dependencies {
     // spring-boot web
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -89,7 +90,50 @@ dependencies {
 
 }
 
+tasks.register('aggregateJavadocs', Javadoc) {
+    group = 'Documentation'
+    description = 'Aggregates Javadoc API documentation of all subprojects.'
 
-test {
-    useJUnitPlatform()
+    def excludedModules = ['maker-tests']
+
+    source subprojects.findAll { project ->
+        !excludedModules.contains(project.name)
+    }.collect { project ->
+        project.sourceSets.main.allJava
+    }
+
+    classpath = files(subprojects.findAll { project ->
+        !excludedModules.contains(project.name)
+    }.collect { project ->
+        project.sourceSets.main.compileClasspath
+    })
+
+    subprojects.findAll { project ->
+        !excludedModules.contains(project.name)
+    }.each { subproject ->
+        subproject.tasks.withType(Javadoc).each { javadocTask ->
+            source += javadocTask.source
+            classpath += javadocTask.classpath
+            excludes += javadocTask.excludes
+            includes += javadocTask.includes
+        }
+    }
+
+    options {
+        encoding = 'UTF-8'
+        charSet = 'UTF-8'
+        author = true
+        version = true
+        use = true
+        windowTitle = "MaKer API Documentation"
+        docTitle = "MaKer API Documentation"
+        header = "MaKer"
+    }
+
+    destinationDir = file("${rootProject.DEFAULT_BUILD_DIR_NAME}/docs/javadoc")
+    failOnError = false
+}
+
+tasks.named('bootJar') {
+    enabled = false
 }
