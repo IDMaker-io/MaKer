@@ -59,7 +59,7 @@ The following rules in the Naver coding convention cannot be checked by this con
             <property name="allowedAbbreviationLength" value="1"/>
             <message key="abbreviation.as.word"
                      value="[list-uppercase-abbr] Abbreviation in name ''{0}'' must contain no more than {1}"/>
-            <property name="allowedAbbreviations" value="DAO,BO"/>
+            <property name="allowedAbbreviations" value="DAO,BO, ID"/>
         </module>
 
         <!-- [package-lowercase] -->
