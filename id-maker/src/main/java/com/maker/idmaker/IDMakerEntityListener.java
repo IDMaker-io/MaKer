@@ -20,7 +20,8 @@ public class IDMakerEntityListener {
 
 	/**
 	 * Method that gets called before an entity gets persisted.
-	 * This method checks all fields of the entity for the {@link IDMaker} annotation and generates an ID for them if they are null.
+	 * This method checks all fields of the entity for the {@link IDMaker} annotation
+	 * and generates an ID for them if they are null.
 	 *
 	 * @param entity the entity that is about to be persisted
 	 * @throws IDMakerAccessException if there is an error accessing the fields of the entity
@@ -42,7 +43,8 @@ public class IDMakerEntityListener {
 	 *
 	 * @param field the field to check
 	 * @return true if the field is annotated with {@link IDMaker} and is of type String, false otherwise
-	 * @throws IDMakerInvalidArgumentException if the field is annotated with {@link IDMaker} but is not of type String
+	 * @throws IDMakerInvalidArgumentException if the field is annotated with
+	 * {@link IDMaker} but is not of type String
 	 */
 	private boolean isIDMakerAnnotated(Field field) {
 		if (!field.isAnnotationPresent(IDMaker.class)) {
