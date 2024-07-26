@@ -25,7 +25,7 @@ If you are using Maven, add the following dependency to your `pom.xml`:
 <dependency>
     <groupId>io.github.yonggoose</groupId>
     <artifactId>MaKer</artifactId>
-    <version>0.6.0</version>
+    <version>0.7.5</version>
 </dependency>
 ```
 
@@ -36,7 +36,7 @@ If you are using Gradle, you can add the following dependency to your `build.gra
 
 ```groovy
 dependencies {
-    implementation 'io.github.yonggoose:MaKer:0.6.0'
+    implementation 'io.github.yonggoose:MaKer:0.7.5'
 }
 ```
 
@@ -54,8 +54,8 @@ First, you need to add the IDMaker library as a dependency to your project. If y
 ```xml
 <dependency>
     <groupId>io.github.yonggoose</groupId>
-    <artifactId>MaKer</artifactId>
-    <version>0.6.0</version>
+    <artifactId>id-maker</artifactId>
+    <version>0.7.5</version>
 </dependency>
 ```
 
@@ -63,7 +63,7 @@ First, you need to add the IDMaker library as a dependency to your project. If y
 
 ```groovy
 dependencies {
-    implementation 'io.github.yonggoose:MaKer:0.6.0'
+    implementation 'io.github.yonggoose:id-maker:0.7.5'
 }
 ```
 
@@ -142,9 +142,21 @@ That's it! You're now using the IDMaker library to generate unique IDs for your 
 
 Ensure that your project includes the MaKer library as a dependency. For Gradle projects, add the following line to your `build.gradle` file:
 
+**Maven:**
+
+```xml
+<dependency>
+    <groupId>io.github.yonggoose</groupId>
+    <artifactId>password-maker</artifactId>
+    <version>0.7.5</version>
+</dependency>
+```
+
+**Gradle:**
+
 ```groovy
 dependencies {
-    implementation 'io.github.yonggoose:MaKer:0.6.0'
+    implementation 'io.github.yonggoose:password-maker:0.7.5'
 }
 ```
 
@@ -212,9 +224,21 @@ This guide outlines the steps to integrate `PasswordMaker` into your Java applic
 
 Confirm the inclusion of the MaKer library as a dependency in your project. For Gradle-based projects, append the subsequent line to your `build.gradle` file:
 
+**Maven:**
+
+```xml
+<dependency>
+    <groupId>io.github.yonggoose</groupId>
+    <artifactId>event-date-time-maker</artifactId>
+    <version>0.7.5</version>
+</dependency>
+```
+
+**Gradle:**
+
 ```groovy
 dependencies {
-    implementation 'io.github.yonggoose:MaKer:0.6.0'
+    implementation 'io.github.yonggoose:event-date-time-maker:0.7.5'
 }
 ```
 
