@@ -33,7 +33,7 @@ public class PasswordMakerListener {
 
 		for (Field field : fields) {
 			if (isPasswordEncoderAnnotated(field)) {
-				EncodingField(entity, field);
+				encodingField(entity, field);
 			}
 		}
 	}
@@ -43,7 +43,8 @@ public class PasswordMakerListener {
 	 *
 	 * @param field the field to check
 	 * @return true if the field is annotated with PasswordMaker and is of type String, false otherwise
-	 * @throws PasswordMakerInvalidArgumentsException if the field is annotated with PasswordMaker but is not of type String
+	 * @throws PasswordMakerInvalidArgumentsException if the field is annotated with PasswordMaker
+	 * but is not of type String
 	 */
 	private boolean isPasswordEncoderAnnotated(Field field) {
 		if (!field.isAnnotationPresent(PasswordMaker.class)) {
@@ -65,7 +66,7 @@ public class PasswordMakerListener {
 	 * @param field the field to encode
 	 * @throws PasswordMakerAccessException if there is an error accessing the field
 	 */
-	private void EncodingField(Object entity, Field field) throws PasswordMakerInvalidArgumentsException {
+	private void encodingField(Object entity, Field field) throws PasswordMakerInvalidArgumentsException {
 		field.setAccessible(true);
 
 		try {
