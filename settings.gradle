@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Maker"
+
+include(
+        "id-maker",
+        "password-maker",
+        "event-date-time-maker",
+        "maker-tests"
+)
