@@ -1,6 +1,6 @@
 ext {
     PUBLISH_GROUP_ID = 'io.github.yonggoose'
-    PUBLISH_VERSION = '0.6.0'
+    PUBLISH_VERSION = '0.7.0'
     PUBLISH_ARTIFACT_ID = 'Maker'
     PUBLISH_DESCRIPTION = 'A library for creating various things'
     PUBLISH_URL = 'https://github.com/IDMaker-io/MaKer'
@@ -8,7 +8,7 @@ ext {
     PUBLISH_LICENSE_URL = 'https://github.com/IDMaker-io/MaKer/blob/main/LICENSE'
     PUBLISH_DEVELOPER_ID = 'YongGoose'
     PUBLISH_DEVELOPER_NAME = 'Yongjun Hong'
-    PUBLISH_DEVELOPER_EMAIL = 'kevin09288715@gmail.com'
+    PUBLISH_DEVELOPER_EMAIL = 'dev.yongjun@gmail.com'
     PUBLISH_SCM_CONNECTION = 'scm:git:git://github.com/IDMaker-io/IDMaker.git'
     PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com:IDMaker-io/MaKer.git'
     PUBLISH_SCM_URL = 'https://github.com/IDMaker-io/MaKer/tree/mainr'
