@@ -3,6 +3,7 @@ import com.vanniktech.maven.publish.JavaLibrary
 import com.vanniktech.maven.publish.JavadocJar
 
 plugins {
+    id 'java-library'
     id 'java'
     id "com.vanniktech.maven.publish" version "0.28.0"
     id 'signing'
@@ -12,8 +13,8 @@ plugins {
 }
 
 allprojects {
-    group = 'MaKer'
-    version = '0.7.2'
+    group = "io.github.yonggoose"
+    version = "0.7.5"
 }
 
 subprojects {
@@ -39,13 +40,13 @@ repositories {
     mavenCentral()
 }
 
+javadoc {
+    exclude '**/maker-tests/**'
+}
+
 signing {
     useGpgCmd()
     sign publishing.publications
-}
-
-javadoc {
-    exclude '**/maker-tests/**'
 }
 
 mavenPublishing {
@@ -53,11 +54,12 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "MaKer", "0.7.2")
+    coordinates(project.group.toString(), "MaKer", "0.7.5")
 
     pom {
-        name = "IDMaker"
-        description = "library for ID Making"
+        name = "MaKer"
+        description = "MaKer is a comprehensive Java library designed to enhance " +
+                "the functionality and efficiency of your applications."
         inceptionYear = "2024"
         url = "https://github.com/IDMaker-io/MaKer"
         licenses {
@@ -83,9 +85,9 @@ mavenPublishing {
 }
 
 dependencies {
-    implementation project(':id-maker')
-    implementation project(':password-maker')
-    implementation project(':event-date-time-maker')
+    api project(':id-maker')
+    api project(':password-maker')
+    api project(':event-date-time-maker')
 }
 
 tasks.register('aggregateJavadocs', Javadoc) {

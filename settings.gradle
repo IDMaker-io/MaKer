@@ -14,8 +14,8 @@ dependencyResolutionManagement {
 rootProject.name = "Maker"
 
 include(
-        "id-maker",
-        "password-maker",
-        "event-date-time-maker",
-        "maker-tests"
+        ":id-maker",
+        ":password-maker",
+        ":event-date-time-maker",
+        ":maker-tests"
 )

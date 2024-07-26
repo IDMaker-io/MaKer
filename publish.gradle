@@ -1,6 +1,6 @@
 ext {
     PUBLISH_GROUP_ID = 'io.github.yonggoose'
-    PUBLISH_VERSION = '0.7.2'
+    PUBLISH_VERSION = '0.7.4'
     PUBLISH_ARTIFACT_ID = 'Maker'
     PUBLISH_DESCRIPTION = 'A library for creating various things'
     PUBLISH_URL = 'https://github.com/IDMaker-io/MaKer'
@@ -13,4 +13,3 @@ ext {
     PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com:IDMaker-io/MaKer.git'
     PUBLISH_SCM_URL = 'https://github.com/IDMaker-io/MaKer/tree/mainr'
 }
-// Maven Publishing 블록 설정에 필요한 변수 지정

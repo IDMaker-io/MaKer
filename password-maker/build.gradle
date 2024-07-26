@@ -1,7 +1,13 @@
+import com.vanniktech.maven.publish.SonatypeHost
+import com.vanniktech.maven.publish.JavaLibrary
+import com.vanniktech.maven.publish.JavadocJar
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.0.0'
     id 'io.spring.dependency-management' version '1.1.3'
+    id "com.vanniktech.maven.publish" version "0.28.0"
+    id 'signing'
 }
 
 java {
@@ -12,6 +18,46 @@ java {
 
 repositories {
     mavenCentral()
+}
+
+signing {
+    useGpgCmd()
+    sign publishing.publications
+}
+
+mavenPublishing {
+    configure(new JavaLibrary(new JavadocJar.Empty(), true))
+
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+    coordinates(project.group.toString(), "password-maker", project.version.toString())
+
+    pom {
+        name = "PasswordMaker"
+        description = "PasswordMaker is a comprehensive Java library designed to enhance " +
+                "the functionality and efficiency of your applications."
+        inceptionYear = "2024"
+        url = "https://github.com/IDMaker-io/MaKer"
+        licenses {
+            license {
+                name = "The Eclipse Public License, Version 2.0"
+                url = "https://github.com/IDMaker-io/MaKer/blob/main/LICENSE"
+            }
+        }
+        developers {
+            developer {
+                id = "YongGoose"
+                name = "Yongjun Hong"
+                url = "https://github.com/YongGoose"
+            }
+        }
+
+        scm {
+            connection = "scm:git:git://github.com/IDMaker-io/MaKer.git"
+            developerConnection = "scm:git:ssh://github.com:IDMaker-io/MaKer.git"
+            url = "https://github.com/IDMaker-io/MaKer/tree/main"
+        }
+    }
 }
 
 dependencies {
