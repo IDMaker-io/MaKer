@@ -13,7 +13,7 @@ plugins {
 
 allprojects {
     group = 'MaKer'
-    version = '0.7.0'
+    version = '0.7.2'
 }
 
 subprojects {
@@ -53,7 +53,7 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "MaKer", "0.7.1")
+    coordinates("io.github.yonggoose", "MaKer", "0.7.2")
 
     pom {
         name = "IDMaker"
@@ -83,31 +83,9 @@ mavenPublishing {
 }
 
 dependencies {
-    // spring-boot web
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-
-    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-    implementation 'org.apache.commons:commons-lang3'
-
-    //jpa
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-    //test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    runtimeOnly 'com.h2database:h2'
-
-    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto
-    implementation 'org.springframework.security:spring-security-crypto'
-
-    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on
-    implementation group: 'org.bouncycastle', name: 'bcprov-jdk18on', version: '1.78'
-
-    // https://mvnrepository.com/artifact/com.google.apis/google-api-services-calendar
-    implementation 'com.google.apis:google-api-services-calendar:v3-rev20240517-2.0.0'
-
-    // https://mvnrepository.com/artifact/net.jqwik/jqwik
-    implementation 'net.jqwik:jqwik:1.8.5'
-
+    implementation project(':id-maker')
+    implementation project(':password-maker')
+    implementation project(':event-date-time-maker')
 }
 
 tasks.register('aggregateJavadocs', Javadoc) {

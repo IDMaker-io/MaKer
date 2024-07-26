@@ -1,10 +1,10 @@
 ext {
     PUBLISH_GROUP_ID = 'io.github.yonggoose'
-    PUBLISH_VERSION = '0.7.0'
+    PUBLISH_VERSION = '0.7.2'
     PUBLISH_ARTIFACT_ID = 'Maker'
     PUBLISH_DESCRIPTION = 'A library for creating various things'
     PUBLISH_URL = 'https://github.com/IDMaker-io/MaKer'
-    PUBLISH_LICENSE_NAME = 'Apache License'
+    PUBLISH_LICENSE_NAME = 'Eclipse Public License'
     PUBLISH_LICENSE_URL = 'https://github.com/IDMaker-io/MaKer/blob/main/LICENSE'
     PUBLISH_DEVELOPER_ID = 'YongGoose'
     PUBLISH_DEVELOPER_NAME = 'Yongjun Hong'
