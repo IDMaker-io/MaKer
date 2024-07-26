@@ -6,7 +6,7 @@ build/
 !**/src/test/**/build/
 gradle.properties
 gradlew.bat
-
+.jqwik-database
 ### STS ###
 .apt_generated
 .classpath
