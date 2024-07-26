@@ -53,7 +53,7 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    coordinates("io.github.yonggoose", "MaKer", "0.7.0")
+    coordinates("io.github.yonggoose", "MaKer", "0.7.1")
 
     pom {
         name = "IDMaker"
@@ -62,7 +62,7 @@ mavenPublishing {
         url = "https://github.com/IDMaker-io/MaKer"
         licenses {
             license {
-                name = "The Apache License, Version 2.0"
+                name = "The Eclipse Public License, Version 2.0"
                 url = "https://github.com/IDMaker-io/MaKer/blob/main/LICENSE"
             }
         }
