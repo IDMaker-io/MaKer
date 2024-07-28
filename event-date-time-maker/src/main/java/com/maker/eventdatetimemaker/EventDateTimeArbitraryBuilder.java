@@ -73,6 +73,7 @@ public class EventDateTimeArbitraryBuilder {
 	 * @param hour The hour of the day (0-23).
 	 * @return This builder instance for method chaining.
 	 */
+	@Deprecated
 	public EventDateTimeArbitraryBuilder setHour(int hour) {
 		this.localDateTimeArbitrary = this.localDateTimeArbitrary.hourBetween(hour, hour);
 		return this;
@@ -84,6 +85,7 @@ public class EventDateTimeArbitraryBuilder {
 	 * @param minute The minute of the hour (0-59).
 	 * @return This builder instance for method chaining.
 	 */
+	@Deprecated
 	public EventDateTimeArbitraryBuilder setMinute(int minute) {
 		this.localDateTimeArbitrary = this.localDateTimeArbitrary.minuteBetween(minute, minute);
 		return this;
@@ -95,7 +97,6 @@ public class EventDateTimeArbitraryBuilder {
 	 * @return An {@link EventDateTimeArbitrary} instance.
 	 */
 	public EventDateTimeArbitrary build() {
-		System.out.println("localDateTimeArbitrary: " + localDateTimeArbitrary.sample());
 		return new EventDateTimeArbitrary(localDateTimeArbitrary);
 	}
 }
