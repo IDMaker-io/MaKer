@@ -2,6 +2,7 @@ package com.maker.fixture.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -19,6 +20,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.google.api.services.calendar.model.EventDateTime;
+import com.maker.eventdatetimemaker.EventDateTimeArbitrary;
+import com.maker.eventdatetimemaker.TimeUtil;
 import com.maker.fixture.entity.TestClass;
 import com.maker.idmaker.GenerationType;
 import com.maker.idmaker.IDMakerUtils;
@@ -152,5 +156,59 @@ class TestClassServiceTest {
 		PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder(encodingId);
 
 		Assertions.assertTrue(PasswordMakerUtil.matchPasswordMaker(originId, passwordEncoder.encode(originId)));
+	}
+
+
+	@RepeatedTest(1_000)
+	public void testEventDateTimeMakerSetYear() {
+		int year = new Random().nextInt(100) + 2020;
+		EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
+			.setYear(year)
+			.build();
+
+		EventDateTime eventDateTime = eventDateTimeArbitrary.getEventDateTime();
+		assertEquals(year, TimeUtil.getLocalDateTimeFromDateTime(eventDateTime).getYear());
+	}
+
+	@RepeatedTest(1_000)
+	public void testEventDateTimeMakerSetMonth() {
+		int month = new Random().nextInt(12) + 1;
+		EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
+			.setMonth(month)
+			.build();
+
+		EventDateTime eventDateTime = eventDateTimeArbitrary.getEventDateTime();
+		assertEquals(month, TimeUtil.getLocalDateTimeFromDateTime(eventDateTime).getMonth().getValue());
+	}
+
+	@RepeatedTest(1_000)
+	public void testEventDateTimeMakerSetDay() {
+		int day = new Random().nextInt(31) + 1;
+		EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
+			.setDay(day)
+			.build();
+
+		EventDateTime eventDateTime = eventDateTimeArbitrary.getEventDateTime();
+		assertEquals(day, TimeUtil.getLocalDateTimeFromDateTime(eventDateTime).getDayOfMonth());
+	}
+
+	@RepeatedTest(1_000)
+	public void testEventDAteTimeMakerTotalSetting() {
+		int year = new Random().nextInt(10) + 2000;
+		int month = new Random().nextInt(12) + 1;
+		int day = new Random().nextInt(28) + 1;
+
+		EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
+			.setYear(year)
+			.setMonth(month)
+			.setDay(day)
+			.build();
+
+		EventDateTime eventDateTime = eventDateTimeArbitrary.getEventDateTime();
+		LocalDateTime localDateTime = TimeUtil.getLocalDateTimeFromDateTime(eventDateTime);
+
+		assertEquals(year, localDateTime.getYear());
+		assertEquals(month, localDateTime.getMonth().getValue());
+		assertEquals(day, localDateTime.getDayOfMonth());
 	}
 }
