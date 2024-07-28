@@ -198,8 +198,6 @@ class TestClassServiceTest {
 		int month = new Random().nextInt(12) + 1;
 		int day = new Random().nextInt(28) + 1;
 
-		System.out.println(year + " " + month + " " + day);
-
 		EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
 			.setYear(year)
 			.setMonth(month)
@@ -207,7 +205,6 @@ class TestClassServiceTest {
 			.build();
 
 		EventDateTime eventDateTime = eventDateTimeArbitrary.getEventDateTime();
-		System.out.println(eventDateTime);
 		LocalDateTime localDateTime = TimeUtil.getLocalDateTimeFromDateTime(eventDateTime);
 
 		assertEquals(year, localDateTime.getYear());
