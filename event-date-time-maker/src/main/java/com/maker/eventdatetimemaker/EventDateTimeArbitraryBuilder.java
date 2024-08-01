@@ -57,13 +57,13 @@ public class EventDateTimeArbitraryBuilder {
 	}
 
 	/**
-	 * Sets the day of month for generated {@link LocalDateTime}.
+	 * Sets the date of month for generated {@link LocalDateTime}.
 	 *
-	 * @param day The day of the month (1-31).
+	 * @param date The date of the month (1-31).
 	 * @return This builder instance for method chaining.
 	 */
-	public EventDateTimeArbitraryBuilder setDay(int day) {
-		this.localDateTimeArbitrary = this.localDateTimeArbitrary.dayOfMonthBetween(day, day);
+	public EventDateTimeArbitraryBuilder setDate(int date) {
+		this.localDateTimeArbitrary = this.localDateTimeArbitrary.dayOfMonthBetween(date, date);
 		return this;
 	}
 

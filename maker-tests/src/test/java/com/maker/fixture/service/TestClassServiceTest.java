@@ -182,26 +182,26 @@ class TestClassServiceTest {
 	}
 
 	@RepeatedTest(1_000)
-	public void testEventDateTimeMakerSetDay() {
-		int day = new Random().nextInt(31) + 1;
+	public void testEventDateTimeMakerSetDate() {
+		int date = new Random().nextInt(31) + 1;
 		EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
-			.setDay(day)
+			.setDate(date)
 			.build();
 
 		EventDateTime eventDateTime = eventDateTimeArbitrary.getEventDateTime();
-		assertEquals(day, TimeUtil.getLocalDateTimeFromDateTime(eventDateTime).getDayOfMonth());
+		assertEquals(date, TimeUtil.getLocalDateTimeFromDateTime(eventDateTime).getDayOfMonth());
 	}
 
 	@RepeatedTest(1_000)
-	public void testEventDAteTimeMakerTotalSetting() {
+	public void testEventDateTimeMakerTotalSetting() {
 		int year = new Random().nextInt(10) + 2000;
 		int month = new Random().nextInt(12) + 1;
-		int day = new Random().nextInt(28) + 1;
+		int date = new Random().nextInt(28) + 1;
 
 		EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
 			.setYear(year)
 			.setMonth(month)
-			.setDay(day)
+			.setDate(date)
 			.build();
 
 		EventDateTime eventDateTime = eventDateTimeArbitrary.getEventDateTime();
@@ -209,6 +209,6 @@ class TestClassServiceTest {
 
 		assertEquals(year, localDateTime.getYear());
 		assertEquals(month, localDateTime.getMonth().getValue());
-		assertEquals(day, localDateTime.getDayOfMonth());
+		assertEquals(date, localDateTime.getDayOfMonth());
 	}
 }
