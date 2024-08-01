@@ -252,7 +252,7 @@ Example of crafting an `EventDateTime` instance:
 EventDateTimeArbitrary eventDateTimeArbitrary = EventDateTimeArbitrary.builder()
 	.setYear(2024)
 	.setMonth(7)
-	.setDay(7)
+	.setDate(7)
 	.build();
 ```
 
