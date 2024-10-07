@@ -63,7 +63,7 @@ mavenPublishing {
 dependencies {
     // https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api
     implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
-    implementation 'com.google.apis:google-api-services-calendar:v3-rev20240705-2.0.0'
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev20240927-2.0.0'
     implementation 'net.jqwik:jqwik:1.9.0'
 }
 
